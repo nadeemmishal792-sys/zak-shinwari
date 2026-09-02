@@ -134,6 +134,43 @@ text-align:center;
 font-size:40px;
 color:#b22222;
 }
+
+/* Added: quick WhatsApp reservation button */
+.whatsapp-reserve{
+position:fixed;
+right:22px;
+bottom:22px;
+z-index:9999;
+display:flex;
+align-items:center;
+gap:10px;
+padding:14px 20px;
+background:#25D366;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+box-shadow:0 6px 20px rgba(0,0,0,.22);
+transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.whatsapp-reserve:hover{
+transform:translateY(-3px);
+box-shadow:0 9px 25px rgba(0,0,0,.28);
+}
+
+.whatsapp-reserve span:first-child{
+font-size:22px;
+}
+
+@media(max-width:600px){
+.whatsapp-reserve{
+right:14px;
+bottom:14px;
+padding:13px 17px;
+font-size:14px;
+}
+}
 </style>
 
 </head>
@@ -345,6 +382,12 @@ Order on Foodpanda
 <p>© 2026 Zak Shinwari. All Rights Reserved.</p>
 
 </footer>
+
+<!-- Added: direct WhatsApp reservation access; existing content remains unchanged -->
+<a class="whatsapp-reserve" href="https://wa.me/923002615381?text=Assalam%20o%20Alaikum%2C%20I%20would%20like%20to%20reserve%20a%20table%20at%20Zak%20Shinwari." target="_blank" rel="noopener noreferrer" aria-label="Reserve a table on WhatsApp">
+<span>💬</span>
+<span>Reserve on WhatsApp</span>
+</a>
 
 </body>
 </html>
