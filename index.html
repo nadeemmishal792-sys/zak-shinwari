@@ -15,65 +15,172 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
+:root{
+--premium-red:#9f1d20;
+--deep-burgundy:#5f1015;
+--warm-gold:#c9a45c;
+--cream:#f7f1e6;
+--ink:#191513;
+--soft-white:#fffdf8;
+}
+
+html{scroll-behavior:smooth;}
+
 body{
-background:#f8f8f8;
+background:var(--cream);
 color:#333;
+position:relative;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-1;
+background:
+radial-gradient(circle at 8% 12%,rgba(201,164,92,.12),transparent 22%),
+radial-gradient(circle at 92% 34%,rgba(159,29,32,.08),transparent 24%),
+linear-gradient(135deg,rgba(255,255,255,.42),transparent 48%);
 }
 
 header{
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+background:
+linear-gradient(135deg,rgba(25,21,19,.82),rgba(95,16,21,.62)),
 url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 height:90vh;
+min-height:620px;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
+position:relative;
+overflow:hidden;
+}
+
+header::before{
+content:"";
+position:absolute;
+inset:22px;
+border:1px solid rgba(201,164,92,.5);
+border-radius:24px;
+pointer-events:none;
+}
+
+header::after{
+content:"✦  ZAK SHINWARI  ✦";
+position:absolute;
+bottom:32px;
+left:50%;
+transform:translateX(-50%);
+font-size:11px;
+letter-spacing:5px;
+color:rgba(255,255,255,.78);
+white-space:nowrap;
+}
+
+header > div{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:45px;
 }
 
 header h1{
 font-size:60px;
+line-height:1.05;
+letter-spacing:-2px;
+text-shadow:0 8px 30px rgba(0,0,0,.4);
+}
+
+header h1::after{
+content:"";
+display:block;
+width:74px;
+height:3px;
+margin:22px auto 0;
+background:linear-gradient(90deg,transparent,var(--warm-gold),transparent);
 }
 
 header p{
 font-size:20px;
-margin:15px 0;
+margin:15px 0 28px;
+color:#f8eee0;
 }
 
 .btn{
 display:inline-block;
 padding:15px 35px;
-background:#d62828;
+background:linear-gradient(135deg,var(--premium-red),var(--deep-burgundy));
 color:white;
 text-decoration:none;
 border-radius:50px;
 font-weight:bold;
 transition:.3s;
+box-shadow:0 12px 30px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.18);
+border:1px solid rgba(201,164,92,.55);
 }
 
 .btn:hover{
-background:#9d0208;
+background:linear-gradient(135deg,#b3262b,#741319);
+transform:translateY(-3px);
+box-shadow:0 16px 35px rgba(95,16,21,.34);
 }
 
 section{
 padding:70px 10%;
+position:relative;
+}
+
+section:nth-of-type(even)::before{
+content:"✦";
+position:absolute;
+top:22px;
+left:50%;
+transform:translateX(-50%);
+color:rgba(159,29,32,.18);
+font-size:18px;
 }
 
 h2{
 text-align:center;
 margin-bottom:30px;
 font-size:35px;
-color:#b22222;
+color:var(--premium-red);
+letter-spacing:-.5px;
+}
+
+h2::after{
+content:"";
+display:block;
+width:54px;
+height:2px;
+margin:12px auto 0;
+background:linear-gradient(90deg,var(--premium-red),var(--warm-gold));
 }
 
 .card{
-background:white;
+background:linear-gradient(145deg,rgba(255,253,248,.98),rgba(255,255,255,.96));
 padding:30px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+border-radius:18px;
+box-shadow:0 14px 35px rgba(56,31,20,.09);
 margin-bottom:30px;
+border:1px solid rgba(201,164,92,.2);
+position:relative;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:28px;
+right:28px;
+height:2px;
+background:linear-gradient(90deg,transparent,var(--warm-gold),transparent);
 }
 
 .grid{
@@ -83,15 +190,34 @@ gap:25px;
 }
 
 .menu-item{
-background:white;
+background:linear-gradient(145deg,#fffdf8,#fff);
 padding:25px;
-border-radius:12px;
+border-radius:14px;
 text-align:center;
-box-shadow:0 5px 10px rgba(0,0,0,.1);
+box-shadow:0 10px 25px rgba(56,31,20,.08);
+border:1px solid rgba(201,164,92,.22);
+transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+position:relative;
+overflow:hidden;
+}
+
+.menu-item::after{
+content:"✦";
+position:absolute;
+right:14px;
+top:10px;
+font-size:12px;
+color:var(--warm-gold);
+}
+
+.menu-item:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 34px rgba(95,16,21,.12);
+border-color:rgba(201,164,92,.55);
 }
 
 .menu-item h3{
-color:#b22222;
+color:var(--premium-red);
 margin-bottom:10px;
 }
 
@@ -108,11 +234,12 @@ border-radius:16px;
 overflow:hidden;
 box-shadow:0 6px 18px rgba(0,0,0,.1);
 transition:transform .25s ease, box-shadow .25s ease;
+border:1px solid rgba(201,164,92,.18);
 }
 
 .full-menu-card:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,0,0,.16);
+transform:translateY(-7px);
+box-shadow:0 18px 35px rgba(95,16,21,.16);
 }
 
 .full-menu-card img{
@@ -120,6 +247,12 @@ width:100%;
 height:190px;
 object-fit:cover;
 display:block;
+transition:transform .45s ease,filter .45s ease;
+}
+
+.full-menu-card:hover img{
+transform:scale(1.04);
+filter:saturate(1.08) contrast(1.03);
 }
 
 .full-menu-info{
@@ -127,7 +260,7 @@ padding:20px;
 }
 
 .full-menu-info h3{
-color:#b22222;
+color:var(--premium-red);
 margin-bottom:7px;
 font-size:20px;
 }
@@ -143,7 +276,7 @@ display:block;
 margin-top:12px;
 font-size:19px;
 font-weight:700;
-color:#111;
+color:var(--deep-burgundy);
 }
 
 .menu-note{
@@ -154,14 +287,24 @@ color:#666;
 }
 
 footer{
-background:#111;
+background:
+radial-gradient(circle at 50% 0,rgba(201,164,92,.14),transparent 30%),
+linear-gradient(145deg,#15110f,#2a1718);
 color:white;
 padding:40px;
 text-align:center;
+border-top:2px solid rgba(201,164,92,.45);
 }
 
 .contact{
 line-height:2;
+}
+
+.contact a{
+color:var(--premium-red);
+font-weight:600;
+text-decoration:none;
+border-bottom:1px solid rgba(159,29,32,.25);
 }
 
 ul{
@@ -169,11 +312,12 @@ padding-left:20px;
 }
 
 .review{
-background:#fff3cd;
+background:linear-gradient(135deg,#fffaf0,#fff3d9);
 padding:20px;
-border-left:6px solid orange;
+border-left:6px solid var(--warm-gold);
 margin-top:20px;
 border-radius:10px;
+box-shadow:0 8px 20px rgba(56,31,20,.06);
 }
 
 .stats{
@@ -186,11 +330,13 @@ margin-top:20px;
 
 .stat{
 text-align:center;
+min-width:120px;
 }
 
 .stat h3{
 font-size:40px;
-color:#b22222;
+color:var(--premium-red);
+text-shadow:0 3px 15px rgba(159,29,32,.12);
 }
 
 /* Added: quick WhatsApp reservation button */
@@ -222,12 +368,24 @@ font-size:22px;
 }
 
 @media(max-width:600px){
+header{min-height:560px;}
+header h1{font-size:42px;letter-spacing:-1px;}
+header p{font-size:16px;}
+header > div{padding:30px;}
+header::before{inset:14px;}
+section{padding:55px 6%;}
+h2{font-size:29px;}
 .whatsapp-reserve{
 right:14px;
 bottom:14px;
 padding:13px 17px;
 font-size:14px;
 }
+}
+
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto;}
+*,*::before,*::after{transition:none!important;animation:none!important;}
 }
 </style>
 
