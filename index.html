@@ -95,6 +95,64 @@ color:#b22222;
 margin-bottom:10px;
 }
 
+/* Added: full Pakistani menu cards with food photography and prices */
+.full-menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.full-menu-card{
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,.1);
+transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.full-menu-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,.16);
+}
+
+.full-menu-card img{
+width:100%;
+height:190px;
+object-fit:cover;
+display:block;
+}
+
+.full-menu-info{
+padding:20px;
+}
+
+.full-menu-info h3{
+color:#b22222;
+margin-bottom:7px;
+font-size:20px;
+}
+
+.full-menu-info p{
+font-size:14px;
+line-height:1.6;
+min-height:45px;
+}
+
+.menu-price{
+display:block;
+margin-top:12px;
+font-size:19px;
+font-weight:700;
+color:#111;
+}
+
+.menu-note{
+text-align:center;
+margin-top:25px;
+font-size:13px;
+color:#666;
+}
+
 footer{
 background:#111;
 color:white;
@@ -272,6 +330,79 @@ Zak Shinwari is one of Sialkot's highest-rated restaurants, serving authentic Sh
 </div>
 
 </div>
+
+</section>
+
+<!-- Added: expanded Pakistani food menu; existing Popular Menu remains unchanged -->
+<section>
+
+<h2>Pakistani Food Menu</h2>
+
+<div class="full-menu-grid">
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85" alt="Pakistani samosa" loading="lazy">
+<div class="full-menu-info"><h3>Samosa</h3><p>Crispy pastry filled with spiced potatoes and peas.</p><span class="menu-price">PKR 180 / 2 pcs</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=85" alt="Chicken biryani" loading="lazy">
+<div class="full-menu-info"><h3>Chicken Biryani</h3><p>Fragrant basmati rice layered with tender chicken and spices.</p><span class="menu-price">PKR 650</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=900&q=85" alt="Pakistani chicken karahi" loading="lazy">
+<div class="full-menu-info"><h3>Chicken Karahi</h3><p>Fresh chicken cooked in a rich tomato, ginger and chilli masala.</p><span class="menu-price">PKR 1,350</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85" alt="Mutton curry" loading="lazy">
+<div class="full-menu-info"><h3>Mutton Handi</h3><p>Slow-cooked mutton with traditional Pakistani herbs and spices.</p><span class="menu-price">PKR 1,750</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85" alt="Pakistani naan" loading="lazy">
+<div class="full-menu-info"><h3>Garlic Naan</h3><p>Fresh tandoori naan finished with garlic and butter.</p><span class="menu-price">PKR 180</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=85" alt="Rice pulao" loading="lazy">
+<div class="full-menu-info"><h3>Mutton Pulao</h3><p>Long-grain basmati rice cooked with tender mutton and whole spices.</p><span class="menu-price">PKR 750</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=900&q=85" alt="Seekh kebab" loading="lazy">
+<div class="full-menu-info"><h3>Seekh Kabab</h3><p>Juicy minced-meat kababs grilled over high heat.</p><span class="menu-price">PKR 850 / 4 pcs</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&w=900&q=85" alt="Chicken tikka" loading="lazy">
+<div class="full-menu-info"><h3>Chicken Tikka</h3><p>Char-grilled chicken marinated in classic Pakistani spices.</p><span class="menu-price">PKR 950</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=900&q=85" alt="Haleem" loading="lazy">
+<div class="full-menu-info"><h3>Special Haleem</h3><p>Slow-cooked lentils, wheat and meat topped with fresh garnishes.</p><span class="menu-price">PKR 550</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=85" alt="Pakistani daal" loading="lazy">
+<div class="full-menu-info"><h3>Daal Makhni</h3><p>Creamy black lentils simmered with butter and aromatic spices.</p><span class="menu-price">PKR 520</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85" alt="Fresh Pakistani salad" loading="lazy">
+<div class="full-menu-info"><h3>Fresh Salad</h3><p>Crisp seasonal salad with lemon and house dressing.</p><span class="menu-price">PKR 280</span></div>
+</div>
+
+<div class="full-menu-card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85" alt="Chocolate dessert" loading="lazy">
+<div class="full-menu-info"><h3>Special Dessert</h3><p>A sweet finishing treat selected fresh for the day.</p><span class="menu-price">PKR 450</span></div>
+</div>
+
+</div>
+
+<p class="menu-note">*Prices shown are sample website menu prices and may be updated by the restaurant.</p>
 
 </section>
 
